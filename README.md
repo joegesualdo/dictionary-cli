@@ -10,7 +10,7 @@ $ npm install -g english-dictionary
 ```
 $ definition <word> [options]
 ```
-![dictionary cli demo](dictionary-cli-demo.gif)
+![dictionary cli demo](https://raw.github.com/joegesualdo/dictionary-cli/master/dictionary-cli-demo.gif)
 
 ## Options
 
@@ -20,7 +20,7 @@ $ definition <word> [options]
 - `-sd`: Print a short description 
 - `-a`: Print everything 
 
-![dictionary cli options demo](dictionary-cli-demo-options.gif)
+![dictionary cli options demo](https://raw.github.com/joegesualdo/dictionary-cli/master/dictionary-cli-demo-options.gif)
 
 ## Example
 ```
