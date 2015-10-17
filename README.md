@@ -1,9 +1,9 @@
-##  Dictionary CLI
+##  English Dictionary CLI
 > English Dictionary from the command line 
 
 ## Install
 ```
-$ npm install dictionary 
+$ npm install -g english-dictionary 
 ```
 
 ## Usage
