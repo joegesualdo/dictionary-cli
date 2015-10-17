@@ -10,6 +10,7 @@ $ npm install -g english-dictionary
 ```
 $ definition <word> [options]
 ```
+![dictionary cli demo](dictionary-cli-demo.gif)
 
 ## Example
 ```
@@ -20,3 +21,5 @@ Or use the short version `def`
 $ def abate
 ```
 
+## License
+MIT © Joe Gesualdo
