@@ -5,6 +5,8 @@ var VocabFetcher = require("vocab-fetcher")
 var vocabFetcher = new VocabFetcher()
 var ManipulateSubstring = require("manipulate-substring")
 var Player = require('player');
+SpellChecker = require("spellchecker")
+
 
 var player = new Player()
 player.on('playing',function(item){
@@ -38,6 +40,15 @@ if(args.indexOf("-h") > -1){
 
 if(!args[0]){
   throw new Error("Must provide a word as the first agument")
+}
+
+if(SpellChecker.isMisspelled(args[0])){
+  spellingSuggestions = SpellChecker.getCorrectionsForMisspelling(args[0])
+  console.log("It looks like the word might be misspelled. Here are some suggestions:")
+  for(var i = 0; i < spellingSuggestions.length; i++){
+    console.log(i+1+") "+chalk.underline.blue(spellingSuggestions[i]))
+  }
+  return
 }
 
 var showSentences;
