@@ -14,11 +14,12 @@ $ definition <word> [options]
 
 ## Options
 
-- `-f`: Print related words
-- `-s`: Print sentences
+- `-f` : Print related words
+- `-s` : Print sentences
 - `-ld`: Print a long description 
 - `-sd`: Print a short description 
-- `-a`: Print everything 
+- `-a` : Print everything 
+- `-p` : Play pronunciation audio
 
 ![dictionary cli options demo](https://raw.github.com/joegesualdo/dictionary-cli/master/dictionary-cli-demo-options.gif)
 
