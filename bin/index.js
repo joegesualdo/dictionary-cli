@@ -7,6 +7,19 @@ var ManipulateSubstring = require("manipulate-substring")
 
 var args = process.argv.slice(2);
 
+if(args.indexOf("-h") > -1){
+  console.log("Usage:\n  definition <word> [options]")
+  console.log("Options:")
+  console.log("  -h  # Show all options")
+  console.log("  -s  # Show sentences")
+  console.log("  -f  # Show related words")
+  console.log("  -sd  # Show short description")
+  console.log("  -ld  # Show long description")
+  console.log("Example:\n  definition abate -a")
+
+  return
+}
+
 if(!args[0]){
   throw new Error("Must provide a word as the first agument")
 }
@@ -16,6 +29,7 @@ var showFamily;
 var showShortDescription;
 var showLongDescription;
 var showDefinitions;
+
 // Defaults
 if(args.length == 1){
   showSentences = false 
