@@ -45,6 +45,7 @@ var showFamily;
 var showShortDescription;
 var showLongDescription;
 var showDefinitions;
+var playAudio;
 
 // Defaults
 if(args.length == 1){
