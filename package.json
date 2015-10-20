@@ -1,6 +1,6 @@
 {
   "name": "english-dictionary-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,16 @@
     "spellchecker": "^3.1.2",
     "vocab-fetcher": "^0.1.5"
   },
+  "keywords": [
+    "dictionary",
+    "vocabulary",
+    "cli",
+    "definitions",
+    "english",
+    "language",
+    "english language",
+    "command line dictionary"
+  ],
   "bin": {
     "def": "./bin/index.js",
     "definition": "./bin/index.js"
