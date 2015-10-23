@@ -85,6 +85,7 @@ if(args.indexOf("-ld") > -1){
   showLongDescription = true
 }
 if(args.indexOf("-a") > -1){
+  showDefinitions = true
   showSentences = true
   showFamily= true
   showShortDescription = true
@@ -97,23 +98,18 @@ vocabFetcher.getWord(args[0]).then(function(word){
   console.log("")
   if(showShortDescription == true){
     printShortDescription(word)
-    console.log("")
   }
   if(showLongDescription == true){
     printLongDescription(word)
-    console.log("")
   }
   if(showDefinitions == true){
     printDefinitions(word)
-    console.log("")
   }
   if(showSentences == true){
     printSentences(word)
-    console.log("")
   }
   if(showFamily== true){
     printFamily(word)
-    console.log("")
   }
   if(playAudio == true){
     playPronunciation(word)
@@ -122,12 +118,18 @@ vocabFetcher.getWord(args[0]).then(function(word){
 
 
 function printShortDescription(wordObj){
-  console.log(chalk.underline.blue("Short Description"))
-  console.log(chalk.green(wordObj.name.capitalizeFirstLetter()) + ": " +wordObj.shortDescription)
+  if(wordObj.shortDescription != ""){
+    console.log(chalk.underline.blue("Short Description"))
+    console.log(chalk.green(wordObj.name.capitalizeFirstLetter()) + ": " +wordObj.shortDescription)
+    console.log("")
+  }
 }
 function printLongDescription(wordObj){
-  console.log(chalk.underline.blue("Long Description"))
-  console.log(chalk.green(wordObj.name.capitalizeFirstLetter()) + ": " + wordObj.longDescription)
+  if(wordObj.longDescription != ""){
+    console.log(chalk.underline.blue("Long Description"))
+    console.log(chalk.green(wordObj.name.capitalizeFirstLetter()) + ": " + wordObj.longDescription)
+    console.log("")
+  }
 }
 function printDefinitions(wordObj){
   console.log(chalk.underline.blue("Definitions"))
@@ -135,6 +137,7 @@ function printDefinitions(wordObj){
     defObj = wordObj.definitions[i]
     console.log(chalk.yellow(defObj.partOfSpeech) + ") " + defObj.definition)
   }
+  console.log("")
 }
 
 function printSentences(wordObj){
@@ -144,6 +147,7 @@ function printSentences(wordObj){
     console.log(chalk.yellow(i+1) +") " + ManipulateSubstring.colorizeBetweenCharacterIndexes("green", sentenceObj.offsets[0], sentenceObj.offsets[1], sentenceObj.sentence))
     // console.log(chalk.yellow(i+1) +") " + sentenceObj.offsets)
   }
+  console.log("")
 }
 function printFamily(wordObj){
   console.log(chalk.underline.blue("Family"))
@@ -151,6 +155,7 @@ function printFamily(wordObj){
     familyObj = wordObj.family[i]
     console.log(chalk.yellow(i+1) +") " + familyObj.word)
   }
+  console.log("")
 }
 
 String.prototype.capitalizeFirstLetter = function() {
