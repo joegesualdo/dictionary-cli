@@ -3,7 +3,7 @@
 
 ## Install
 ```
-$ npm install -g english-dictionary 
+$ npm install -g english-dictionary-cli
 ```
 
 ## Usage
