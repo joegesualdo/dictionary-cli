@@ -1,6 +1,8 @@
 ##  English Dictionary CLI
 > English Dictionary from the command line 
 
+*You may also be interested in the* [vocab-fetcher](https://github.com/joegesualdo/vocab-fetcher) *module.*
+
 ## Install
 ```
 $ npm install -g english-dictionary-cli
