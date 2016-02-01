@@ -27,7 +27,7 @@ $ definition <word> [options]
 
 ## Example
 ```
-$ defintion abate
+$ definition abate
 ```
 Or use the short version `def`
 
