@@ -4,22 +4,7 @@ var chalk = require('chalk');
 var VocabFetcher = require("vocab-fetcher")
 var vocabFetcher = new VocabFetcher()
 var ManipulateSubstring = require("manipulate-substring")
-var Player = require('player');
 SpellChecker = require("spellchecker")
-
-
-var player = new Player()
-player.on('playing',function(item){
-  // console.log('im playing... src:' + item);
-});
-player.on("error", function(err){
-// console.log(err)
-})
-player.on('playend',function(item){
-//return a playend item
-  // console.log('src:' + item + ' play done, switching to next one ...');
-})
-
 
 var args = process.argv.slice(2);
 
@@ -29,7 +14,6 @@ if(args.indexOf("-h") > -1){
   console.log("  -h   # Show all options")
   console.log("  -s   # Show sentences")
   console.log("  -f   # Show related words")
-  console.log("  -p   # Play pronunciation audio")
   console.log("  -sd  # Show short description")
   console.log("  -ld  # Show long description")
   console.log("  -ld  # Show long description")
@@ -56,7 +40,6 @@ var showFamily;
 var showShortDescription;
 var showLongDescription;
 var showDefinitions;
-var playAudio;
 
 // Defaults
 if(args.length == 1){
@@ -65,11 +48,6 @@ if(args.length == 1){
   showShortDescription = true 
   showLongDescription = false 
   showDefinitions = true
-  playAudio = false 
-}
-
-if(args.indexOf("-p") > -1){
-  playAudio = true
 }
 
 if(args.indexOf("-s") > -1){
@@ -110,9 +88,6 @@ vocabFetcher.getWord(args[0]).then(function(word){
   }
   if(showFamily== true){
     printFamily(word)
-  }
-  if(playAudio == true){
-    playPronunciation(word)
   }
 })
 
@@ -160,12 +135,4 @@ function printFamily(wordObj){
 
 String.prototype.capitalizeFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
-function playPronunciation(wordObj){
-  player.add(wordObj.audioUrl)
-  player.play(function(err, player){
-  });
-  // player.stop()
-
 }

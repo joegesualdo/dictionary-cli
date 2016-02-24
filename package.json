@@ -11,8 +11,7 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "manipulate-substring": "0.0.4",
-    "player": "guo-yu/player",
-    "spellchecker": "^3.1.2",
+    "spellchecker": "^3.2.3",
     "vocab-fetcher": "^0.1.5"
   },
   "keywords": [

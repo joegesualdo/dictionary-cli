@@ -21,7 +21,6 @@ $ definition <word> [options]
 - `-ld`: Print a long description 
 - `-sd`: Print a short description 
 - `-a` : Print everything 
-- `-p` : Play pronunciation audio
 
 ![dictionary cli options demo](https://raw.github.com/joegesualdo/dictionary-cli/master/dictionary-cli-demo-options.gif)
 
