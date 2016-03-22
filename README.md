@@ -18,9 +18,8 @@ $ definition <word> [options]
 
 - `-f` : Print related words
 - `-s` : Print sentences
-- `-ld`: Print a long description 
-- `-sd`: Print a short description 
-- `-a` : Print everything 
+- `-d` : Print descriptions
+- `-a` : Print everything
 
 ![dictionary cli options demo](https://raw.github.com/joegesualdo/dictionary-cli/master/dictionary-cli-demo-options.gif)
 

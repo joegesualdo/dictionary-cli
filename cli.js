@@ -5,8 +5,10 @@ var VocabFetcher = require("vocab-fetcher")
 var vocabFetcher = new VocabFetcher()
 var ManipulateSubstring = require("manipulate-substring")
 var SpellChecker = require("spellchecker")
+var parseArgv = require("parse-argv")
 
 var args = process.argv.slice(2);
+var argv = parseArgv(args)
 
 // Defaults
 var showSentences = false;
@@ -44,23 +46,33 @@ if (SpellChecker.isMisspelled(args[0])) {
   return
 }
 
-if (args.indexOf("-s") > -1) {
+if (argv["s"]) {
   showSentences = true;
 }
 
-if (args.indexOf("-f") > -1) {
+if (argv["f"]) {
   showFamily= true;
 }
 
-if (args.indexOf("-sd") > -1) {
-  showShortDescription = true;
+if (argv["d"]) {
+  switch(argv["d"]) {
+    case "short":
+      showShortDescription = true;
+      showLongDescription = false;
+      break
+    case "long":
+      showLongDescription = true;
+      showShortDescription = false;
+      break
+    case true:
+      showShortDescription = true;
+      showLongDescription = true;
+    default:
+      break;
+  }
 }
 
-if (args.indexOf("-ld") > -1) {
-  showLongDescription = true;
-}
-
-if (args.indexOf("-a") > -1) {
+if (argv["a"]) {
   showFamily= true;
   showSentences = true;
   showDefinitions = true;
